@@ -99,7 +99,8 @@
       }
 
       loadingBar.style.display = "block";
-
+      
+      var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -109,8 +110,8 @@
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
-                  unityInstance = unityInstance;
                 };
+                myGameInstance = unityInstance;
               }).catch((message) => {
                 alert(message);
               });
