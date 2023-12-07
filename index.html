@@ -120,7 +120,7 @@
       document.body.appendChild(script);
       function unityFunction(message){
         window.addEventListener('message', function(event){
-          myGameInstance.SendMessage("GameManager", "ReceiveData", message);
+          myGameInstance.SendMessage("GameManager", "ReceiveData", event.data);
       });
     }
     </script>
