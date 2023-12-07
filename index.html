@@ -99,7 +99,7 @@
       }
 
       loadingBar.style.display = "block";
-      
+
       var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -118,11 +118,10 @@
             };
 
       document.body.appendChild(script);
-
-        window.addEventListener('message', function(event){
+      
+      window.addEventListener('message', function(event){
           myGameInstance.SendMessage("GameManager", "ReceiveData", event.data);
         });
     </script>
   </body>
-
 </html>
