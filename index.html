@@ -100,7 +100,7 @@
 
       loadingBar.style.display = "block";
 
-      var mygameInstance = null;
+      var myGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -111,21 +111,21 @@
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
-                mygameInstance = unityInstance;
+                myGameInstance = unityInstance;
               }).catch((message) => {
                 alert(message);
               });
             };
+          
 
       document.body.appendChild(script);
       
-
       window.addEventListener('message', function(event){
         unityFunction(event.data);
-        });
-        
+      });
       function unityFunction(message){
-        mygameInstance.SendMessage("GameManager", "ReceiveData", message); 
+        myGameInstance.SendMessage("GameManager", "ReceiveData", message);
+
       }
     </script>
   </body>
