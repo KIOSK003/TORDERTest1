@@ -121,7 +121,7 @@
       function unityFunction(message){
         if (myGameInstance !== null) {
           myGameInstance.SendMessage("GameManager", "ReceiveData", message);
-          window.removeEventListener('message', unityFunction);
+          //window.removeEventListener('message', unityFunction);
         }
         console.log("unityfunction : " + message);
       }
