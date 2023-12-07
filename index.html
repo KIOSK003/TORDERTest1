@@ -119,8 +119,10 @@
 
       document.body.appendChild(script);
       function unityFunction(message){
-        myGameInstance.SendMessage("GameManager", "ReceiveData", message);
-        window.removeEventListener('message', unityFunction);
+        if (myGameInstance !== null) {
+          myGameInstance.SendMessage("GameManager", "ReceiveData", message);
+          window.removeEventListener('message', unityFunction);
+        }
       }
       window.addEventListener('message', unityFunction);
     </script>
