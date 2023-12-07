@@ -123,7 +123,7 @@
         });
     
         function GetWebMessage(message){
-          window.unityInstance.SendMessage("GameManager", "ReceiveData", JSON.stringify(receivedData));
+          window.unityInstance.SendMessage("GameManager", "ReceiveData", JSON.stringify(message));
         }
     </script>
   </body>
