@@ -111,21 +111,18 @@
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
-              myGameInstance = unityInstance;
+                myGameInstance = unityFunction;
               }).catch((message) => {
                 alert(message);
               });
             };
 
       document.body.appendChild(script);
-
-      
       function unityFunction(message){
         window.addEventListener('message', function(event){
           myGameInstance.SendMessage("GameManager", "ReceiveData", message);
       });
-
-      }
+    }
     </script>
   </body>
 </html>
