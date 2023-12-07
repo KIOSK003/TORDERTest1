@@ -120,7 +120,7 @@
       document.body.appendChild(script);
 
         window.addEventListener('message', function(event){
-          myGameInstance.SendMessage("GameManager", "ReceiveData", JSON.stringify(message));
+          myGameInstance.SendMessage("GameManager", "ReceiveData", JSON.stringify(event.data));
         });
     </script>
   </body>
