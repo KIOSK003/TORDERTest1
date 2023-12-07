@@ -116,7 +116,15 @@
             };
 
       document.body.appendChild(script);
+      
 
+      window.addEventListener('message', function(event){
+        unityFunction(event.data);
+        });
+        
+      function unityFunction(messgae){
+          myGameInstance.SendMessage("GameManager", "ReceiveData", message); 
+      }
     </script>
   </body>
 </html>
