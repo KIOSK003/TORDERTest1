@@ -121,6 +121,7 @@
       
       window.addEventListener('message', function(event){
           myGameInstance.SendMessage("GameManager", "ReceiveData", event.data);
+          console.Log(event.data);
         });
     </script>
   </body>
