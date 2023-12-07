@@ -120,8 +120,9 @@
     </script>
   </body>
   <script>
+    var receivedData;
     window.addEventListener('message', function(event){
-      var receivedData = event.data;
+      receivedData = event.data;
       alert(receivedData);
     });
 
