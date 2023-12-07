@@ -117,18 +117,15 @@
 
       document.body.appendChild(script);
 
+      var receivedData;
+        window.addEventListener('message', function(event){
+          receivedData = event.data;
+        });
+    
+        function GetWebMessage(message){
+          window.unityInstance.SendMessage("GameManager", "ReceiveData", JSON.stringify(receivedData));
+        }
     </script>
   </body>
-  <script>
-    var receivedData;
-    window.addEventListener('message', function(event){
-      receivedData = event.data;
-      alert(receivedData);
-    });
 
-    function GetWebMessage(message){
-      var dataToSend = {key:"value"};
-      window.unityInstance.SendMessage("GameManager", "ReceiveData", JSON.stringify(receivedData));
-    }
-  </script>
 </html>
