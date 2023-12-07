@@ -124,5 +124,10 @@
       var receivedData = event.data;
       alert(receivedData);
     });
+
+    function GetWebMessage(message){
+      var dataToSend = {key:"value"};
+      unityInstance.SendMessage("GameManager", "ReceiveData", JSON.stringify(receivedData));
+    }
   </script>
 </html>
