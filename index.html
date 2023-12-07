@@ -120,12 +120,8 @@
       document.body.appendChild(script);
 
         window.addEventListener('message', function(event){
-          GetWebMessage(event.data);
+          myGameInstance.SendMessage("GameManager", "ReceiveData", JSON.stringify(message));
         });
-    
-        function GetWebMessage(message){
-          window.unityInstance.SendMessage("GameManager", "ReceiveData", JSON.stringify(message));
-        }
     </script>
   </body>
 
