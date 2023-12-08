@@ -128,7 +128,7 @@
           });
 
           function unityFunction(message) {
-              if (myGameInstance != null) {
+              if (myGameInstance != null && receivedData != null) {
                   console.log(receivedData);
                   // Unity가 로드되었으면 메시지 전송
                   myGameInstance.SendMessage("GameManager", "ReceiveData", receivedData);
