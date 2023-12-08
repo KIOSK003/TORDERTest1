@@ -99,8 +99,8 @@
       }
 
       loadingBar.style.display = "block";
-      
-      var myGameInstance = null;
+
+      var myGameInstance null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -111,14 +111,13 @@
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
-                myGameInstance = unityInstance;
+                  myGameInstance = unityInstance;
               }).catch((message) => {
                 alert(message);
               });
             };
 
-        document.body.appendChild(script);
-
+      document.body.appendChild(script);
         var receivedData
         window.addEventListener('message', function (event) {
             receivedData = event.data;
@@ -134,11 +133,6 @@
                 console.log("Unity is not loaded yet. Retry or handle accordingly.");
             }
         }
-
-        // 예시로 Unity가 완전히 로드된 후에 메시지를 보내는 코드
-        //UnityLoader.SystemInfo.hasWebGL ? sendUnityMessage({ key: "value" }) : null;
-
-      //window.addEventListener('message', unityFunction);
     </script>
   </body>
 </html>
