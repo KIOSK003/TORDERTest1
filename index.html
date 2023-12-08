@@ -23,9 +23,9 @@
               <div id="unity-build-title">KIOSK</div>
           </div>
       </div>
-      <script src="BuildTest1/BuildTest1.loader.js"></script>
+      <script src="Build/BuildTest1.loader.js"></script>
       <script>
-          var buildTest1 = UnityLoader.instantiate("unityContainer", "Build/BuildTest1.loader");
+          var buildTest1 = UnityLoader.instantiate("unityContainer", "Build/BuildTest1.json");
       </script>
       <script>
 
@@ -35,6 +35,7 @@
           var progressBarFull = document.querySelector("#unity-progress-bar-full");
           var fullscreenButton = document.querySelector("#unity-fullscreen-button");
           var warningBanner = document.querySelector("#unity-warning");
+          var buildTest1 = UnityLoader.instantiate("unityContainer", "Build/BuildTest1.loader");
 
           // Shows a temporary message banner/ribbon for a few seconds, or
           // a permanent error message on top of the canvas if type=='error'.
