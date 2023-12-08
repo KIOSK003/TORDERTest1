@@ -130,7 +130,7 @@
           function unityFunction(message) {
               if (myGameInstance != null) {
                   // Unity가 로드되었으면 메시지 전송
-                  window.unityInstance.SendMessage("GameManager", "ReceiveData", receivedData);
+                  myGameInstance.SendMessage("GameManager", "ReceiveData", receivedData);
               } else {
                   // Unity가 로드되지 않았으면 재시도 또는 다른 처리 수행
                   console.log("Unity is not loaded yet. Retry or handle accordingly.");
