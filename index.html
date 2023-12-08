@@ -120,7 +120,7 @@
           };
 
           document.body.appendChild(script);
-          var receivedData = null;
+          var receivedData;
           window.addEventListener('message', function (event) {
               receivedData = event.data;
               alert(receivedData);
