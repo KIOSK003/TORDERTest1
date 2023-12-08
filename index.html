@@ -23,6 +23,10 @@
               <div id="unity-build-title">KIOSK</div>
           </div>
       </div>
+      <script src="BuildTest1/BuildTest1.loader.js"></script>
+      <script>
+          var buildTest1 = UnityLoader.instantiate("unityContainer", "BuildTest1/BuildTest1.json");
+      </script>
       <script>
 
           var container = document.querySelector("#unity-container");
@@ -134,10 +138,7 @@
               }
           }
       </script>
-      <script src="BuildTest1/BuildTest1.loader.js"></script>
-      <script>
-          var buildTest1 = UnityLoader.instantiate("unityContainer", "BuildTest1/BuildTest1.json");
-      </script>
+
 
   </body>
 </html>
