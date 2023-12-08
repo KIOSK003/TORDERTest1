@@ -125,7 +125,7 @@
             alert(receivedData);
         });
 
-        function sendUnityMessage(message) {
+        function unityFunction(message) {
             if (UnityLoader.SystemInfo.hasWebGL) {
                 // Unity가 로드되었으면 메시지 전송
                 window.unityInstance.SendMessage("GameManager", "ReceiveData", receivedData);
