@@ -117,15 +117,28 @@
               });
             };
 
-      document.body.appendChild(script);
-      function unityFunction(message){
-        if (myGameInstance !== null) {
-          myGameInstance.SendMessage("GameManager", "ReceiveData", message);
-          //window.removeEventListener('message', unityFunction);
+        document.body.appendChild(script);
+
+        var receivedData
+        window.addEventListener('message', function (event) {
+            receivedData = event.data;
+            alert(receivedData);
+        });
+
+        function sendUnityMessage(message) {
+            if (UnityLoader.SystemInfo.hasWebGL) {
+                // Unity가 로드되었으면 메시지 전송
+                window.unityInstance.SendMessage("GameManager", "ReceiveData", receivedData);
+            } else {
+                // Unity가 로드되지 않았으면 재시도 또는 다른 처리 수행
+                console.log("Unity is not loaded yet. Retry or handle accordingly.");
+            }
         }
-        console.log("unityfunction : " + message);
-      }
-      window.addEventListener('message', unityFunction);
+
+        // 예시로 Unity가 완전히 로드된 후에 메시지를 보내는 코드
+        //UnityLoader.SystemInfo.hasWebGL ? sendUnityMessage({ key: "value" }) : null;
+
+      //window.addEventListener('message', unityFunction);
     </script>
   </body>
 </html>
