@@ -119,23 +119,23 @@
 
       document.body.appendChild(script);
 
-    var receivedData;
-    window.addEventListener('message', function (event) {
-        receivedData = event.data;
-        alert(receivedData);
-        unityFunction(receivedData);
-    });
+      var receivedData;
+      window.addEventListener('message', function (event) {
+          receivedData = event.data;
+          alert(receivedData);
+          unityFunction(receivedData);
+      });
 
-    function unityFunction(message) {
-        if (myGameInstance != null && receivedData != null) {
-            console.log(receivedData);
-            // Unity가 로드되었으면 메시지 전송
-            myGameInstance.SendMessage("GameManager", "ReceiveData", receivedData);
-        } else {
-            // Unity가 로드되지 않았으면 재시도 또는 다른 처리 수행
-            console.log("Unity is not loaded yet. Retry or handle accordingly.");
-        }
-    }
+      function unityFunction(message) {
+          if (myGameInstance != null && receivedData != null) {
+              console.log(receivedData);
+              // Unity가 로드되었으면 메시지 전송
+              myGameInstance.SendMessage("GameManager", "ReceiveData", receivedData);
+          } else {
+              // Unity가 로드되지 않았으면 재시도 또는 다른 처리 수행
+              console.log("Unity is not loaded yet. Retry or handle accordingly.");
+          }
+      }
     </script>
   </body>
 </html>
